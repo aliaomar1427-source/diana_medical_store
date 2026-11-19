@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>DIANA MEDICAL | المتجر الذكي</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #f7f8fc;
+    --white: #ffffff;
+    --panel: #ffffff;
+    --panel2: #f0edff;
+    --purple: #8064df;
+    --purple-dark: #674bc4;
+    --teal: #20bba9;
+    --text: #25243a;
+    --muted: #777b91;
+    --border: #e9e7f2;
+    --shadow: 0 10px 35px rgba(48, 39, 91, .07);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.8;
+}
+
+button, input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    white-space: nowrap;
+    color: var(--text);
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+.owner-signature {
+    border-right: 1px solid var(--border);
+    padding-right: 13px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+.owner-signature span:first-child {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.owner-signature span:last-child {
+    color: var(--purple-dark);
+    font-size: 12px;
+    font-weight: 900;
+    direction: ltr;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.nav-links a {
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: var(--purple);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.language-button {
+    background: #f0edff;
+    color: var(--purple-dark);
+    border: 1px solid #e1dafd;
+    padding: 8px 13px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.cart-button {
+    background: var(--purple);
+    color: white;
+    padding: 9px 15px;
+    border-radius: 11px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 390px;
+    margin-top: 28px;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #8c76d9, #b6a8ef);
+    border: 1px solid #e7defe;
+    display: flex;
+    align-items: center;
+    padding: 55px;
+    box-shadow: var(--shadow);
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .30;
+    z-index: -2;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(75,55,145,.48),
+        rgba(119,96,190,.62)
+    );
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 650px;
+    color: white;
+}
+
+.hero-label {
+    display: inline-block;
+    padding: 5px 14px;
+    border: 1px solid rgba(255,255,255,.45);
+    background: rgba(255,255,255,.16);
+    border-radius: 30px;
+    font-size: 12px;
+    margin-bottom: 17px;
+    font-weight: 800;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 49px);
+    line-height: 1.35;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #bafff2;
+}
+
+.hero p {
+    color: rgba(255,255,255,.94);
+    max-width: 530px;
+    font-size: 15px;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 25px;
+    background: white;
+    color: #654bb5;
+    padding: 11px 25px;
+    border-radius: 12px;
+    font-weight: 900;
+    transition: .2s;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0,0,0,.12);
+}
+
+/* SECTION HEADINGS */
+
+.section-heading {
+    margin: 65px 0 25px;
+}
+
+.section-heading small {
+    color: var(--teal);
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.section-heading h2 {
+    font-size: 29px;
+    font-weight: 900;
+    color: var(--text);
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* PRODUCTS */
+
+.products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.product-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 260px;
+    transition: .25s;
+    box-shadow: var(--shadow);
+}
+
+.product-section:hover {
+    border-color: #c9bafa;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(87, 68, 160, .11);
+}
+
+.product-image-area {
+    background: #f1effb;
+    min-height: 260px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image-area img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: contain;
+    padding: 20px;
+    display: block;
+}
+
+.product-info {
+    padding: 27px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-number {
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .7px;
+}
+
+.product-info h3 {
+    font-size: 23px;
+    margin: 5px 0 8px;
+    font-weight: 900;
+    color: var(--text);
+}
+
+.product-description {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 650px;
+    margin-bottom: 15px;
+}
+
+.product-prices {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 17px;
+}
+
+.current-price {
+    color: var(--teal);
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.old-price {
+    color: #a2a3b2;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.add-button {
+    background: var(--purple);
+    color: white;
+    border-radius: 11px;
+    padding: 10px 22px;
+    font-weight: 800;
+    transition: .2s;
+}
+
+.add-button:hover {
+    background: var(--purple-dark);
+}
+
+.product-tag {
+    color: var(--teal);
+    font-size: 12px;
+    border: 1px solid #c8eee8;
+    background: #f1fffc;
+    padding: 5px 12px;
+    border-radius: 30px;
+}
+
+/* CART */
+
+.cart-section {
+    margin-top: 70px;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.cart-section h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.cart-empty {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.cart-item-name {
+    font-weight: 800;
+}
+
+.cart-item small {
+    color: var(--muted);
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    width: 29px;
+    height: 29px;
+    border-radius: 8px;
+    background: var(--panel2);
+    color: var(--purple-dark);
+    font-weight: 900;
+}
+
+.remove-button {
+    color: #e46c80;
+    background: transparent !important;
+    font-size: 12px;
+    width: auto !important;
+    padding: 0 5px;
+}
+
+.cart-total {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.checkout-button {
+    width: 100%;
+    margin-top: 20px;
+    background: var(--teal);
+    color: white;
+    padding: 13px;
+    border-radius: 12px;
+    font-weight: 900;
+    transition: .2s;
+}
+
+.checkout-button:hover {
+    background: #159f91;
+}
+
+/* AI NEGOTIATION */
+
+.ai-section {
+    margin-top: 30px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f0edff, #f5fffd);
+    border: 1px solid #e4defb;
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.ai-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.ai-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    background: #e2dafa;
+    color: var(--purple-dark);
+    border-radius: 13px;
+    font-size: 22px;
+}
+
+.ai-section h2 {
+    color: var(--text);
+}
+
+.ai-section > p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.chat-box {
+    margin-top: 20px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 18px;
+    min-height: 180px;
+    max-height: 330px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    padding: 11px 14px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    max-width: 90%;
+    white-space: pre-wrap;
+}
+
+.user-message {
+    background: #eee9ff;
+    color: #4d398f;
+    margin-right: auto;
+}
+
+.bot-message {
+    background: #eafaf7;
+    color: #245e57;
+    margin-left: auto;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    min-width: 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    padding: 13px;
+    outline: none;
+}
+
+.chat-input-area input:focus {
+    border-color: var(--purple);
+}
+
+.chat-input-area button {
+    background: var(--purple);
+    color: white;
+    padding: 0 23px;
+    border-radius: 12px;
+    font-weight: 800;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 70px;
+    padding: 35px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    background: white;
+}
+
+footer strong {
+    color: var(--purple);
+}
+
+.footer-credit {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #9994ad;
+    direction: ltr;
+    letter-spacing: .5px;
+}
+
+/* ENGLISH DIRECTION */
+
+html[dir="ltr"] .hero::after {
+    background: linear-gradient(
+        90deg,
+        rgba(75,55,145,.62),
+        rgba(119,96,190,.45)
+    );
+}
+
+html[dir="ltr"] .user-message {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+html[dir="ltr"] .bot-message {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+html[dir="ltr"] .owner-signature {
+    border-right: none;
+    border-left: 1px solid var(--border);
+    padding-right: 0;
+    padding-left: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .product-section {
+        grid-template-columns: 250px 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .nav-inner {
+        min-height: 70px;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo-area {
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .owner-signature {
+        padding-right: 8px;
+    }
+
+    .owner-signature span:first-child {
+        font-size: 8px;
+    }
+
+    .owner-signature span:last-child {
+        font-size: 10px;
+    }
+
+    .language-button {
+        padding: 7px 10px;
+    }
+
+    .cart-button {
+        padding: 8px 11px;
+    }
+
+    .hero {
+        min-height: 330px;
+        padding: 28px;
+    }
+
+    .product-section {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image-area {
+        min-height: 220px;
+    }
+
+    .product-image-area img {
+        min-height: 220px;
+        max-height: 260px;
+    }
+
+    .product-info {
+        padding: 22px;
+    }
+
+    .chat-input-area {
+        flex-direction: column;
+    }
+
+    .chat-input-area button {
+        padding: 12px;
+    }
+
+    .cart-section,
+    .ai-section {
+        padding: 20px;
+    }
+
+    .cart-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* ===== DIANA PAYMENT DESIGN ===== */
+
+.payment-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(12, 20, 35, .72);
+    backdrop-filter: blur(8px);
+    overflow-y: auto;
+}
+
+.payment-box {
+    width: 100%;
+    max-width: 460px;
+    margin: auto;
+    padding: 28px;
+    border-radius: 24px;
+    background: #fff;
+    color: #222;
+    box-shadow: 0 25px 80px rgba(0,0,0,.25);
+    animation: paymentEnter .35s ease;
+}
+
+@keyframes paymentEnter {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.payment-box h2 {
+    text-align: center;
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: #263b52;
+}
+
+.payment-box > p {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.bank-card {
+    min-height: 180px;
+    padding: 23px;
+    margin-bottom: 25px;
+    border-radius: 19px;
+    color: white;
+    background: linear-gradient(135deg, #243b55, #47718b);
+    box-shadow: 0 12px 25px rgba(36,59,85,.25);
+    direction: ltr;
+    text-align: left;
+}
+
+.bank-card .bank-name {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.bank-card .chip {
+    font-size: 28px;
+    margin: 18px 0;
+}
+
+.bank-card .preview-number {
+    font-size: 19px;
+    letter-spacing: 3px;
+    margin-bottom: 17px;
+}
+
+.bank-card .preview-name {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.payment-box label {
+    display: block;
+    margin: 13px 0 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #34465a;
+}
+
+.payment-box input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid #e1e6eb;
+    border-radius: 11px;
+    outline: none;
+    font-size: 14px;
+    background: #f8fafc;
+    transition: .2s;
+}
+
+.payment-box input:focus {
+    border-color: #47718b;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(71,113,139,.1);
+}
+
+.payment-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.payment-box button {
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 17px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.payment-box button:first-of-type {
+    background: #263f55;
+    color: white;
+}
+
+.payment-box button:last-of-type {
+    margin-top: 9px;
+    background: #f0f2f5;
+    color: #555;
+}
+
+.payment-note {
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    margin-top: 14px;
+}
+
+@media(max-width:480px) {
+    .payment-box {
+        padding: 21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+    <div class="container nav-inner">
+
+        <div class="logo-area">
+            <a href="#" class="logo">DIANA <span>MEDICAL</span></a>
+
+            <div class="owner-signature">
+                <span>CREATED BY</span>
+                <span>Alia Al-Essa</span>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home" data-i18n="navHome">الرئيسية</a>
+            <a href="#products" data-i18n="navProducts">المنتجات</a>
+            <a href="#cart" data-i18n="navCart">السلة</a>
+            <a href="#ai" data-i18n="navAI">التفاوض الذكي</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="language-button" id="languageToggle" onclick="toggleLanguage()">
+                English
+            </button>
+
+            <a href="#cart" class="cart-button">
+                <span data-i18n="cartButton">السلة</span>
+                (<span id="cartCount">0</span>)
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+
+<main class="container">
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <img
+        class="hero-image"
+        src="{{ url_for('static', filename='company.jpg') }}"
+        alt="DIANA MEDICAL"
+    >
+
+    <div class="hero-content">
+
+        <span class="hero-label" data-i18n="heroLabel">
+            DIANA MEDICAL STORE
+        </span>
+
+        <h1>
+            <span data-i18n="heroTitle1">الرعاية الصحية تبدأ من</span>
+            <span data-i18n="heroTitle2">الاختيار الصحيح</span>
+        </h1>
+
+        <p data-i18n="heroDescription">
+            اكتشفي منتجات ديانا الطبية المصممة لتسهيل متابعة صحتك،
+            مع تجربة تسوق ذكية تتيح لك التفاوض على الأسعار.
+        </p>
+
+        <a href="#products" class="hero-button" data-i18n="heroButton">
+            اكتشفي منتجاتنا
+        </a>
+
+    </div>
+</section>
+
+
+<!-- PRODUCTS -->
+
+<div class="section-heading" id="products">
+    <small data-i18n="productsLabel">OUR PRODUCTS</small>
+    <h2 data-i18n="productsTitle">منتجاتنا الطبية</h2>
+    <p data-i18n="productsDescription">كل منتج له تفاصيله وصورته الخاصة.</p>
+</div>
+
+
+<div class="products-list">
+
+{% for id, product in products.items() %}
+
+<section class="product-section" id="product-{{ id }}">
+
+    <div class="product-image-area">
+        <img
+            src="{{ url_for('static', filename=product.image) }}"
+            alt="{{ product.name }}"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="product-info">
+
+        <span class="product-number">
+            PRODUCT {{ loop.index }}
+        </span>
+
+        <h3 data-product-name="{{ id }}">{{ product.name }}</h3>
+
+        <p class="product-description" data-product-description="{{ id }}">
+            {% if id == 'device' %}
+                جهاز قياس سكر الدم لمتابعة مستوى الجلوكوز والمساعدة في مراقبة القراءات اليومية بسهولة.
+            {% elif id == 'strips50' %}
+                عبوة تحتوي على 50 شريط قياس سكر، للاستخدام مع جهاز القياس المتوافق.
+            {% elif id == 'strips100' %}
+                عبوة اقتصادية تحتوي على 100 شريط قياس لتوفير احتياجك لفترة أطول.
+            {% elif id == 'bag' %}
+                شنطة مخصصة لحفظ وتنظيم جهاز قياس السكر ومستلزماته بطريقة عملية.
+            {% elif id == 'lancet' %}
+                إبر وخز مخصصة للمساعدة في الحصول على عينة الدم اللازمة لقياس السكر.
+            {% elif id == 'bundle' %}
+                مجموعة متكاملة تجمع أهم مستلزمات قياس السكر في باقة واحدة.
+            {% else %}
+                اكتشفي تفاصيل هذا المنتج ومميزاته.
+            {% endif %}
+        </p>
+
+        <div class="product-prices">
+            <span class="current-price">
+                {{ product.price }} ر.س
+            </span>
+
+            <span class="old-price">
+                {{ product.old }} ر.س
+            </span>
+        </div>
+
+        <div class="product-actions">
+            <button
+                class="add-button"
+                onclick="addToCart('{{ id }}')"
+                data-i18n="addButton"
+            >
+                + أضيفي إلى السلة
+            </button>
+
+            <span class="product-tag" data-i18n="productTag">
+                DIANA MEDICAL
+            </span>
+        </div>
+
+    </div>
+</section>
+
+{% endfor %}
+
+</div>
+
+
+<!-- CART -->
+
+<section class="cart-section" id="cart">
+
+    <h2 data-i18n="cartTitle">سلة المشتريات</h2>
+
+    <div id="cartItems">
+        <p class="cart-empty" data-i18n="emptyCart">
+            السلة فارغة حاليًا.
+        </p>
+    </div>
+
+    <div class="cart-total">
+        <span data-i18n="total">الإجمالي</span>
+        <span id="cartTotal">0 ر.س</span>
+    </div>
+
+    <button class="checkout-button" onclick="checkout()" data-i18n="checkout">
+        إتمام الطلب
+    </button>
+
+</section>
+
+
+<!-- AI NEGOTIATION -->
+
+<section class="ai-section" id="ai">
+
+    <div class="ai-heading">
+
+        <div class="ai-icon">✦</div>
+
+        <div>
+            <h2 data-i18n="aiTitle">المفاوض الذكي</h2>
+            <small style="color:var(--teal)">AI SMART NEGOTIATION</small>
+        </div>
+
+    </div>
+
+    <p data-i18n="aiDescription">
+        اختاري منتجاتك وتحدثي مع المفاوض الذكي لمحاولة الحصول على سعر مناسب لطلبك.
+    </p>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-message bot-message" data-i18n="welcomeMessage">
+            أهلًا بك في متجر ديانا الطبية! اختاري منتجاتك وابدئي التفاوض معي على السعر.
+        </div>
+    </div>
+
+    <div class="chat-input-area">
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="اكتبي عرضك أو اطلبي خصمًا..."
+            data-i18n-placeholder="chatPlaceholder"
+            onkeydown="if(event.key === 'Enter') sendMessage()"
+        >
+
+        <button onclick="sendMessage()" id="sendButton" data-i18n="send">
+            إرسال
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p data-i18n="footerText">
+        صحتك أولويتنا، وتجربتك تهمنا.
+    </p>
+
+    <div class="footer-credit">
+        DIANA MEDICAL | DIGITAL EXPERIENCE
+    </div>
+
+</footer>
+
+
+<!-- PAYMENT MODAL -->
+
+<div id="paymentModal" class="payment-modal">
+
+    <div class="payment-box">
+
+        <h2>إتمام الطلب</h2>
+        <p>أدخلي بيانات تجريبية لمعاينة تجربة الدفع</p>
+
+        <div class="bank-card">
+            <div class="bank-name">DIANA MEDICAL</div>
+            <div class="chip">▤</div>
+            <div class="preview-number" id="previewNumber">
+                •••• •••• •••• ••••
+            </div>
+            <div class="preview-name" id="previewName">
+                CARD HOLDER
+            </div>
+        </div>
+
+        <label>اسم حامل البطاقة</label>
+        <input id="cardName" type="text"
+               placeholder="الاسم على البطاقة"
+               autocomplete="off"
+               oninput="document.getElementById('previewName').textContent=this.value || 'CARD HOLDER'">
+
+        <label>رقم البطاقة التجريبي</label>
+        <input id="cardNumber" type="text"
+               inputmode="numeric" maxlength="19"
+               placeholder="0000 0000 0000 0000"
+               autocomplete="off"
+               oninput="this.value=this.value.replace(/\D/g,'').slice(0,16).replace(/(.{4})/g,'$1 ').trim(); document.getElementById('previewNumber').textContent=this.value || '•••• •••• •••• ••••'">
+
+        <div class="payment-row">
+            <div>
+                <label>تاريخ الانتهاء</label>
+                <input id="cardExpiry" type="text"
+                       placeholder="MM/YY" maxlength="5"
+                       autocomplete="off">
+            </div>
+
+            <div>
+                <label>CVV تجريبي</label>
+                <input id="cardCVV" type="password"
+                       inputmode="numeric" maxlength="4"
+                       placeholder="000" autocomplete="off">
+            </div>
+        </div>
+
+        <button onclick="confirmDemoPayment()">
+            تأكيد الطلب
+        </button>
+
+        <button type="button" onclick="closePayment()">
+            رجوع للمتجر
+        </button>
+
+        <div class="payment-note">
+            🔒 محاكاة تجريبية فقط — لا يتم تنفيذ أي عملية دفع
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* PRODUCTS FROM FLASK */
+
+const PRODUCTS = {{ products|tojson }};
+
+let cart = {};
+let chatHistory = [];
+
+
+/* TRANSLATIONS */
+
+const translations = {
+
+    ar: {
+        navHome: "الرئيسية",
+        navProducts: "المنتجات",
+        navCart: "السلة",
+        navAI: "التفاوض الذكي",
+        cartButton: "السلة",
+
+        heroLabel: "DIANA MEDICAL STORE",
+        heroTitle1: "الرعاية الصحية تبدأ من",
+        heroTitle2: "الاختيار الصحيح",
+        heroDescription: "اكتشفي منتجات ديانا الطبية المصممة لتسهيل متابعة صحتك، مع تجربة تسوق ذكية تتيح لك التفاوض على الأسعار.",
+        heroButton: "اكتشفي منتجاتنا",
+
+        productsLabel: "OUR PRODUCTS",
+        productsTitle: "منتجاتنا الطبية",
+        productsDescription: "كل منتج له تفاصيله وصورته الخاصة.",
+
+        addButton: "+ أضيفي إلى السلة",
+        productTag: "DIANA MEDICAL",
+
+        cartTitle: "سلة المشتريات",
+        emptyCart: "السلة فارغة حاليًا.",
+        total: "الإجمالي",
+        checkout: "إتمام الطلب",
+
+        aiTitle: "المفاوض الذكي",
+        aiDescription: "اختاري منتجاتك وتحدثي مع المفاوض الذكي لمحاولة الحصول على سعر مناسب لطلبك.",
+        welcomeMessage: "أهلًا بك في متجر ديانا الطبية! اختاري منتجاتك وابدئي التفاوض معي على السعر.",
+        chatPlaceholder: "اكتبي عرضك أو اطلبي خصمًا...",
+        send: "إرسال",
+
+        footerText: "صحتك أولويتنا، وتجربتك تهمنا.",
+
+        quantity: "الكمية",
+        delete: "حذف",
+        currency: "ر.س",
+        emptyAlert: "أضيفي منتجًا إلى السلة أولًا.",
+        connectionError: "حدث خطأ أثناء الاتصال: ",
+        checkoutError: "حدث خطأ: ",
+        sending: "...",
+        noReply: "لم يصل رد من المفاوض الذكي.",
+        orderSuccess: "تم استلام طلبك بنجاح. الإجمالي: ",
+
+        names: {
+            device: "جهاز قياس السكر SukkaR",
+            strips50: "أشرطة قياس السكر - 50 شريط",
+            strips100: "أشرطة قياس السكر - 100 شريط",
+            bag: "شنطة حفظ الأدوات",
+            lancet: "إبر الوخز",
+            bundle: "البكج الطبي المتكامل"
+        },
+
+        descriptions: {
+            device: "جهاز قياس سكر الدم لمتابعة مستوى الجلوكوز والمساعدة في مراقبة القراءات اليومية بسهولة.",
+            strips50: "عبوة تحتوي على 50 شريط قياس سكر، للاستخدام مع جهاز القياس المتوافق.",
+            strips100: "عبوة اقتصادية تحتوي على 100 شريط قياس لتوفير احتياجك لفترة أطول.",
+            bag: "شنطة مخصصة لحفظ وتنظيم جهاز قياس السكر ومستلزماته بطريقة عملية.",
+            lancet: "إبر وخز مخصصة للمساعدة في الحصول على عينة الدم اللازمة لقياس السكر.",
+            bundle: "مجموعة متكاملة تجمع أهم مستلزمات قياس السكر في باقة واحدة."
+        }
+    },
+
+    en: {
+        navHome: "Home",
+        navProducts: "Products",
+        navCart: "Cart",
+        navAI: "Smart Negotiation",
+        cartButton: "Cart",
+
+        heroLabel: "DIANA MEDICAL STORE",
+        heroTitle1: "Healthcare starts with",
+        heroTitle2: "the right choice",
+        heroDescription: "Explore DIANA MEDICAL products designed to make health monitoring easier, with a smart shopping experience that lets you negotiate prices.",
+        heroButton: "Explore Products",
+
+        productsLabel: "OUR PRODUCTS",
+        productsTitle: "Our Medical Products",
+        productsDescription: "Explore our products and discover their details.",
+
+        addButton: "+ Add to Cart",
+        productTag: "DIANA MEDICAL",
+
+        cartTitle: "Shopping Cart",
+        emptyCart: "Your cart is currently empty.",
+        total: "Total",
+        checkout: "Checkout",
+
+        aiTitle: "AI Smart Negotiator",
+        aiDescription: "Choose your products and chat with our AI negotiator to try to get a better price for your order.",
+        welcomeMessage: "Welcome to DIANA MEDICAL! Choose your products and start negotiating with me.",
+        chatPlaceholder: "Enter your offer or ask for a discount...",
+        send: "Send",
+
+        footerText: "Your health is our priority. Your experience matters.",
+
+        quantity: "Quantity",
+        delete: "Remove",
+        currency: "SAR",
+        emptyAlert: "Please add a product to your cart first.",
+        connectionError: "Connection error: ",
+        checkoutError: "Error: ",
+        sending: "...",
+        noReply: "No response was received from the AI negotiator.",
+        orderSuccess: "Your order has been received successfully. Total: ",
+
+        names: {
+            device: "SukkaR Blood Glucose Meter",
+            strips50: "Blood Glucose Test Strips - 50 Pack",
+            strips100: "Blood Glucose Test Strips - 100 Pack",
+            bag: "Medical Storage Bag",
+            lancet: "Lancets",
+            bundle: "Complete Medical Bundle"
+        },
+
+        descriptions: {
+            device: "A blood glucose meter designed to help monitor glucose levels and keep track of daily readings with ease.",
+            strips50: "A pack of 50 blood glucose test strips for use with a compatible glucose meter.",
+            strips100: "An economical pack of 100 test strips to support your monitoring needs for longer.",
+            bag: "A practical bag designed to store and organize your glucose meter and its accessories.",
+            lancet: "Lancets designed to help obtain the blood sample needed for glucose testing.",
+            bundle: "A complete package combining essential blood glucose monitoring supplies."
+        }
+    }
+};
+
+
+/* LANGUAGE SWITCH */
+
+let currentLanguage = localStorage.getItem("dianaLanguage") || "ar";
+
+
+function applyLanguage() {
+
+    const t = translations[currentLanguage];
+
+    document.documentElement.lang = currentLanguage;
+    document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
+
+    document.title = currentLanguage === "ar"
+        ? "DIANA MEDICAL | المتجر الذكي"
+        : "DIANA MEDICAL | Smart Store";
+
+    document.getElementById("languageToggle").textContent =
+        currentLanguage === "ar" ? "English" : "العربية";
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const key = element.dataset.i18n;
+
+        if (t[key] !== undefined) {
+            element.textContent = t[key];
+        }
+
+    });
+
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+
+        const key = element.dataset.i18nPlaceholder;
+
+        if (t[key] !== undefined) {
+            element.placeholder = t[key];
+        }
+
+    });
+
+    document.querySelectorAll("[data-product-name]").forEach(element => {
+
+        const id = element.dataset.productName;
+
+        if (t.names[id]) {
+            element.textContent = t.names[id];
+        }
+
+    });
+
+    document.querySelectorAll("[data-product-description]").forEach(element => {
+
+        const id = element.dataset.productDescription;
+
+        if (t.descriptions[id]) {
+            element.textContent = t.descriptions[id];
+        }
+
+    });
+
+    renderCart();
+
+}
+
+
+function toggleLanguage() {
+
+    currentLanguage = currentLanguage === "ar" ? "en" : "ar";
+
+    localStorage.setItem("dianaLanguage", currentLanguage);
+
+    applyLanguage();
+
+}
+
+
+/* CART */
+
+function getCartCount() {
+
+    return Object.values(cart).reduce((sum, quantity) => sum + quantity, 0);
+
+}
+
+
+function getSubtotal() {
+
+    return Object.entries(cart).reduce((sum, [id, quantity]) => {
+
+        const product = PRODUCTS[id];
+
+        return sum + (product ? Number(product.price) * quantity : 0);
+
+    }, 0);
+
+}
+
+
+function addToCart(id) {
+
+    if (!PRODUCTS[id]) return;
+
+    cart[id] = (cart[id] || 0) + 1;
+
+    renderCart();
+
+}
+
+
+function changeQuantity(id, amount) {
+
+    if (!cart[id]) return;
+
+    cart[id] += amount;
+
+    if (cart[id] <= 0) {
+        delete cart[id];
+    }
+
+    renderCart();
+
+}
+
+
+function removeFromCart(id) {
+
+    delete cart[id];
+
+    renderCart();
+
+}
+
+
+function renderCart() {
+
+    const t = translations[currentLanguage];
+
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
+
+    cartCount.textContent = getCartCount();
+
+    if (Object.keys(cart).length === 0) {
+
+        cartItems.innerHTML = "";
+
+        const empty = document.createElement("p");
+        empty.className = "cart-empty";
+        empty.textContent = t.emptyCart;
+
+        cartItems.appendChild(empty);
+
+        cartTotal.textContent = "0 " + t.currency;
+
+        return;
+    }
+
+    cartItems.innerHTML = Object.entries(cart).map(([id, quantity]) => {
+
+        const product = PRODUCTS[id];
+
+        if (!product) return "";
+
+        const productName = t.names[id] || product.name;
+
+        return `
+            <div class="cart-item">
+
+                <div>
+                    <div class="cart-item-name">${productName}</div>
+                    <small>${product.price} ${t.currency} × ${quantity}</small>
+                </div>
+
+                <div class="quantity-controls">
+
+                    <button onclick="changeQuantity('${id}', 1)">+</button>
+
+                    <span>${quantity}</span>
+
+                    <button onclick="changeQuantity('${id}', -1)">-</button>
+
+                    <button class="remove-button" onclick="removeFromCart('${id}')">
+                        ${t.delete}
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+
+    }).join("");
+
+    cartTotal.textContent = getSubtotal().toFixed(2) + " " + t.currency;
+
+}
+
+
+/* CHAT */
+
+function addMessage(message, type) {
+
+    const chatBox = document.getElementById("chatBox");
+
+    const div = document.createElement("div");
+
+    div.className = "chat-message " + type;
+
+    div.textContent = message;
+
+    chatBox.appendChild(div);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+}
+
+
+async function sendMessage() {
+
+    const input = document.getElementById("chatInput");
+    const button = document.getElementById("sendButton");
+
+    const t = translations[currentLanguage];
+
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    addMessage(message, "user-message");
+
+    input.value = "";
+
+    button.disabled = true;
+    button.textContent = t.sending;
+
+    try {
+
+        const response = await fetch("/api/negotiate", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+
+                message: message,
+
+                cart: cart,
+
+                history: chatHistory
+
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Negotiation failed.");
+        }
+
+        const reply = data.reply || t.noReply;
+
+        addMessage(reply, "bot-message");
+
+        chatHistory.push(
+            { role: "user", content: message },
+            { role: "assistant", content: reply }
+        );
+
+        if (chatHistory.length > 20) {
+            chatHistory = chatHistory.slice(-20);
+        }
+
+    } catch (error) {
+
+        addMessage(t.connectionError + error.message, "bot-message");
+
+    } finally {
+
+        button.disabled = false;
+        button.textContent = t.send;
+
+    }
+
+}
+
+
+/* CHECKOUT */
+
+function checkout() {
+
+    const t = translations[currentLanguage];
+
+    if (Object.keys(cart).length === 0) {
+        alert(t.emptyAlert);
+        return;
+    }
+
+    document.getElementById("paymentModal").style.display = "flex";
+
+}
+
+
+function closePayment() {
+
+    document.getElementById("paymentModal").style.display = "none";
+
+}
+
+
+async function confirmDemoPayment() {
+
+    const name = document.getElementById("cardName").value.trim();
+    const number = document.getElementById("cardNumber").value.replace(/\s/g, "");
+    const expiry = document.getElementById("cardExpiry").value.trim();
+    const cvv = document.getElementById("cardCVV").value.trim();
+
+    if (!name || !/^\d{16}$/.test(number) ||
+        !/^\d{2}\/\d{2}$/.test(expiry) ||
+        !/^\d{3,4}$/.test(cvv)) {
+
+        alert("تأكدي من إدخال بيانات تجريبية صحيحة.");
+        return;
+    }
+
+    // لا نرسل بيانات البطاقة أو نخزنها
+
+    try {
+
+        const response = await fetch("/api/checkout", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                cart: cart
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            alert(data.error || "حدث خطأ في الطلب");
+            return;
+        }
+
+        closePayment();
+
+        alert(
+            "تم استلام طلبك بنجاح! 🎉\nرقم الطلب: " +
+            (data.order?.id || "تجريبي")
+        );
+
+        cart = {};
+        renderCart();
+
+        document.getElementById("cardName").value = "";
+        document.getElementById("cardNumber").value = "";
+        document.getElementById("cardExpiry").value = "";
+        document.getElementById("cardCVV").value = "";
+
+        document.getElementById("previewName").textContent = "CARD HOLDER";
+        document.getElementById("previewNumber").textContent = "•••• •••• •••• ••••";
+
+    } catch (error) {
+
+        alert("حدث خطأ أثناء إرسال الطلب: " + error.message);
+
+    }
+
+}
+
+
+/* START */
+
+applyLanguage();
+
+</script>
+
+</body>
+</html>

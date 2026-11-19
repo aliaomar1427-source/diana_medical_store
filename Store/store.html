@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIANA MEDICAL | متجر ديانا الطبي</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+    --purple:#7851c9;
+    --purple-dark:#4b2d82;
+    --purple-light:#a98be9;
+    --lavender:#eee7ff;
+    --ink:#27213b;
+    --muted:#8b849b;
+    --white:#fff;
+    --bg:#faf8ff;
+    --border:#eee9f6;
+    --shadow:0 15px 45px rgba(77,48,128,.09);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--ink)}
+button,input{font-family:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+
+.topbar{
+    background:#39235e;color:white;text-align:center;
+    padding:9px;font-size:12px
+}
+
+.navbar{
+    min-height:85px;display:flex;align-items:center;
+    justify-content:space-between;padding:0 7%;
+    background:#fffffff5;border-bottom:1px solid var(--border);
+    position:sticky;top:0;z-index:20;backdrop-filter:blur(15px)
+}
+
+.brand{display:flex;align-items:center;gap:12px}
+.brand-icon{
+    width:48px;height:48px;border-radius:16px;
+    display:grid;place-items:center;
+    background:linear-gradient(135deg,#8761d5,#51358b);
+    color:white;font-size:21px
+}
+.brand h2{font-size:19px;font-weight:900;color:var(--purple-dark)}
+.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}
+
+.nav-links{display:flex;gap:30px;font-size:13px;color:#696078}
+.nav-links a:hover{color:var(--purple)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+
+.cart-button{
+    border:0;background:var(--lavender);color:var(--purple-dark);
+    padding:12px 18px;border-radius:13px;font-weight:800
+}
+.cart-button span{
+    background:var(--purple);color:white;padding:2px 7px;
+    border-radius:50px;margin-right:5px
+}
+
+/* HERO */
+
+.hero{
+    margin:30px auto 65px;width:88%;min-height:490px;
+    border-radius:32px;overflow:hidden;position:relative;
+    background:
+      radial-gradient(circle at 85% 20%,#b99de9 0%,transparent 32%),
+      radial-gradient(circle at 10% 100%,#604394 0%,transparent 40%),
+      linear-gradient(120deg,#33204f,#644397 65%,#a589db);
+    display:flex;align-items:center;padding:65px 8%;color:white
+}
+
+.hero::before{
+    content:"+";position:absolute;font-size:420px;
+    opacity:.055;left:3%;top:-125px;font-weight:900
+}
+
+.hero-content{
+    width:55%;max-width:570px;position:relative;z-index:2
+}
+
+.hero-label{
+    display:inline-flex;gap:8px;align-items:center;
+    border:1px solid #ffffff55;background:#ffffff17;
+    padding:9px 17px;border-radius:40px;
+    font-size:12px;margin-bottom:22px
+}
+
+.hero h1{
+    font-size:clamp(35px,5vw,58px);
+    font-weight:900;line-height:1.4;margin-bottom:17px
+}
+.hero h1 span{color:#d9c8ff}
+.hero p{color:#e7dff4;line-height:2.1;font-size:14px;max-width:460px}
+
+.hero-buttons{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.primary-btn{
+    background:white;color:var(--purple-dark);
+    padding:14px 26px;border-radius:13px;
+    font-weight:900;border:0;transition:.3s
+}
+.primary-btn:hover{transform:translateY(-4px)}
+.secondary-btn{
+    border:1px solid #ffffff75;background:transparent;
+    color:white;padding:14px 25px;border-radius:13px
+}
+
+/* COMPANY IMAGE */
+
+.hero-media{
+    position:absolute;left:6%;top:9%;width:36%;height:82%;
+    border:1px solid #ffffff55;border-radius:28px;
+    overflow:hidden;background:#ffffff18;
+    box-shadow:0 20px 50px #21103966;z-index:1
+}
+.hero-media img{
+    width:100%;height:100%;object-fit:cover;display:block
+}
+.hero-image-placeholder{
+    width:100%;height:100%;display:grid;place-content:center;
+    justify-items:center;gap:15px;color:#ffffffcc;font-size:65px
+}
+.hero-image-placeholder span{font-size:13px}
+
+/* FEATURES */
+
+.features{
+    width:86%;margin:0 auto 75px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+}
+.feature{
+    background:white;border:1px solid var(--border);
+    border-radius:19px;padding:23px 15px;
+    display:flex;align-items:center;gap:13px;
+    box-shadow:0 5px 20px #38205e08
+}
+.feature-icon{
+    width:45px;height:45px;flex-shrink:0;
+    background:var(--lavender);color:var(--purple);
+    border-radius:14px;display:grid;place-items:center;font-size:19px
+}
+.feature h4{font-size:13px}
+.feature p{font-size:10px;color:var(--muted)}
+
+/* PRODUCTS */
+
+.section{width:86%;margin:0 auto 85px}
+.section-heading{
+    display:flex;justify-content:space-between;
+    align-items:end;margin-bottom:30px
+}
+.section-heading small{
+    color:var(--purple);font-weight:900;
+    letter-spacing:1px;font-size:11px
+}
+.section-heading h2{font-size:29px;font-weight:900;margin-top:6px}
+.section-heading p{color:var(--muted);font-size:12px;margin-top:5px}
+.product-count{
+    color:var(--purple);background:var(--lavender);
+    border-radius:30px;padding:8px 16px;font-size:12px;font-weight:800
+}
+
+.products-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px
+}
+
+.product-card{
+    background:white;border:1px solid var(--border);
+    border-radius:23px;overflow:hidden;
+    transition:.35s;position:relative
+}
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow);border-color:#d9c8ff
+}
+
+.product-image{
+    height:260px;
+    background:linear-gradient(145deg,#f8f5ff,#eee6fc);
+    position:relative;display:grid;place-items:center;overflow:hidden;
+    padding:15px
+}
+
+/* كل منتج تظهر صورته الخاصة */
+
+.product-image img{
+    width:100%;height:100%;
+    object-fit:contain;display:block;
+    transition:.4s;mix-blend-mode:multiply
+}
+.product-card:hover .product-image img{transform:scale(1.07)}
+
+.image-placeholder{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:10px;
+    color:#b7a4db;font-size:45px
+}
+.image-placeholder span{font-size:11px}
+
+.sale-badge{
+    position:absolute;top:15px;right:15px;
+    background:#8057cb;color:white;
+    padding:6px 12px;border-radius:30px;
+    font-size:10px;font-weight:900;z-index:2
+}
+
+.product-info{padding:20px}
+.product-category{color:var(--purple);font-size:10px;font-weight:900}
+.product-info h3{font-size:16px;margin:7px 0;font-weight:900}
+.product-description{color:var(--muted);font-size:11px;line-height:1.9;min-height:42px}
+
+.price-row{display:flex;align-items:center;gap:10px;margin:17px 0}
+.current-price{color:var(--purple-dark);font-size:22px;font-weight:900}
+.old-price{text-decoration:line-through;color:#aaa3b5;font-size:12px}
+.currency{font-size:11px;font-weight:700}
+
+.add-button{
+    width:100%;border:0;border-radius:12px;
+    padding:13px;background:linear-gradient(110deg,#7751bd,#9c78e2);
+    color:white;font-weight:900;transition:.3s
+}
+.add-button:hover{box-shadow:0 7px 18px #7751bd44;transform:translateY(-2px)}
+
+/* OFFERS */
+
+.offer-banner{
+    width:86%;margin:0 auto 85px;padding:43px 6%;
+    border-radius:25px;background:linear-gradient(115deg,#4b2d77,#8b67cb);
+    color:white;display:flex;align-items:center;
+    justify-content:space-between;gap:20px
+}
+.offer-banner h2{font-size:27px;font-weight:900}
+.offer-banner p{color:#e5d9fa;font-size:12px;margin-top:8px}
+.offer-banner button{
+    border:0;background:white;color:var(--purple-dark);
+    border-radius:12px;padding:13px 23px;font-weight:900;white-space:nowrap
+}
+
+/* AI */
+
+.ai-section{
+    width:86%;margin:0 auto 90px;background:white;
+    border:1px solid var(--border);border-radius:27px;
+    padding:40px;display:grid;grid-template-columns:.8fr 1.2fr;
+    gap:35px;box-shadow:var(--shadow)
+}
+.ai-intro{display:flex;flex-direction:column;justify-content:center}
+.ai-logo{
+    width:58px;height:58px;background:linear-gradient(135deg,#7850c4,#b38de9);
+    color:white;border-radius:19px;display:grid;
+    place-items:center;font-size:25px;margin-bottom:20px
+}
+.ai-intro h2{font-size:27px;font-weight:900;line-height:1.5}
+.ai-intro h2 span{color:var(--purple)}
+.ai-intro p{color:var(--muted);font-size:12px;line-height:2.1;margin-top:12px}
+.ai-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.ai-tags span{
+    background:var(--lavender);color:var(--purple-dark);
+    border-radius:30px;padding:7px 11px;font-size:10px;font-weight:800
+}
+
+.chat-box{background:#faf8ff;border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.chat-header{
+    background:white;padding:17px;border-bottom:1px solid var(--border);
+    display:flex;align-items:center;gap:11px
+}
+.bot-avatar{
+    width:39px;height:39px;border-radius:13px;
+    background:var(--lavender);color:var(--purple);
+    display:grid;place-items:center
+}
+.chat-header h4{font-size:12px}
+.chat-header small{color:#24a77b;font-size:10px}
+.chat-messages{
+    height:270px;overflow-y:auto;padding:17px;
+    display:flex;flex-direction:column;gap:13px
+}
+.message{
+    max-width:85%;padding:12px 15px;font-size:11px;
+    line-height:1.9;border-radius:15px;white-space:pre-wrap
+}
+.message.bot{
+    background:white;border:1px solid var(--border);
+    align-self:flex-start;border-bottom-right-radius:3px
+}
+.message.user{
+    background:#7953c2;color:white;
+    align-self:flex-end;border-bottom-left-radius:3px
+}
+.chat-input-area{
+    display:flex;gap:9px;padding:13px;
+    background:white;border-top:1px solid var(--border)
+}
+.chat-input-area input{
+    min-width:0;flex:1;border:1px solid var(--border);
+    outline:none;background:#faf8ff;border-radius:11px;
+    padding:12px;font-size:11px
+}
+.chat-input-area button{
+    border:0;background:var(--purple);color:white;
+    width:44px;border-radius:11px
+}
+.typing{font-size:10px;color:var(--muted);padding:0 17px 10px}
+
+/* FOOTER */
+
+.footer{background:#2e2046;color:white;padding:50px 8% 25px}
+.footer-content{
+    display:flex;justify-content:space-between;
+    gap:30px;flex-wrap:wrap;padding-bottom:35px
+}
+.footer h3{margin-bottom:12px}
+.footer p{font-size:11px;color:#c4b7d6;line-height:2.1}
+.footer-bottom{
+    border-top:1px solid #ffffff20;padding-top:20px;
+    text-align:center;font-size:10px;color:#b7a9c8
+}
+
+/* CART */
+
+.overlay{
+    display:none;position:fixed;inset:0;
+    background:#17102088;z-index:40
+}
+.overlay.active{display:block}
+.cart-drawer{
+    position:fixed;z-index:50;top:0;left:-440px;
+    height:100%;width:min(420px,100%);
+    background:white;transition:.35s;padding:25px;
+    display:flex;flex-direction:column
+}
+.cart-drawer.active{left:0}
+.drawer-header{
+    display:flex;justify-content:space-between;
+    align-items:center;padding-bottom:20px;
+    border-bottom:1px solid var(--border)
+}
+.drawer-header button{
+    border:0;background:var(--lavender);color:var(--purple);
+    width:35px;height:35px;border-radius:10px
+}
+.cart-items{flex:1;overflow-y:auto;padding:15px 0}
+.cart-item{
+    display:flex;align-items:center;gap:12px;
+    padding:13px 0;border-bottom:1px solid var(--border)
+}
+.cart-item img{
+    width:65px;height:65px;object-fit:contain;
+    background:var(--lavender);border-radius:12px
+}
+.cart-item h4{font-size:11px}
+.cart-item p{color:var(--purple);font-size:12px;font-weight:900}
+.quantity-controls{display:flex;align-items:center;gap:9px;margin-top:7px}
+.quantity-controls button{
+    border:0;width:23px;height:23px;border-radius:7px;
+    background:var(--lavender);color:var(--purple)
+}
+.remove-btn{border:0;color:#d16c83;background:transparent;margin-right:auto}
+.cart-summary{border-top:1px solid var(--border);padding-top:20px}
+.summary-row{
+    display:flex;justify-content:space-between;
+    font-size:12px;margin-bottom:12px
+}
+.summary-row.total{font-size:18px;font-weight:900;color:var(--purple-dark)}
+.checkout-btn{
+    width:100%;background:var(--purple);color:white;
+    border:0;border-radius:12px;padding:14px;
+    font-weight:900;margin-top:12px
+}
+.empty-cart{text-align:center;color:var(--muted);padding:55px 10px;font-size:12px}
+.empty-cart i{font-size:40px;color:#c5b1e7;display:block;margin-bottom:15px}
+
+.toast{
+    position:fixed;bottom:25px;right:50%;
+    transform:translateX(50%) translateY(100px);
+    background:#39245c;color:white;padding:13px 24px;
+    border-radius:12px;font-size:12px;z-index:100;transition:.3s
+}
+.toast.show{transform:translateX(50%) translateY(0)}
+
+@media(max-width:900px){
+    .nav-links{display:none}
+    .features{grid-template-columns:repeat(2,1fr)}
+    .products-grid{grid-template-columns:repeat(2,1fr)}
+    .hero-media{opacity:.35}
+    .ai-section{grid-template-columns:1fr}
+}
+@media(max-width:550px){
+    .navbar{padding:0 5%;min-height:72px}
+    .brand h2{font-size:15px}
+    .brand-icon{width:40px;height:40px}
+    .cart-button{padding:10px;font-size:11px}
+    .hero{width:92%;min-height:440px;padding:35px 7%}
+    .hero h1{font-size:35px}
+    .hero-media{display:none}
+    .hero-content{width:100%}
+    .features,.section,.offer-banner,.ai-section{width:92%}
+    .features{gap:10px}
+    .feature{padding:13px 8px;gap:8px}
+    .feature h4{font-size:11px}
+    .feature p{font-size:9px}
+    .products-grid{grid-template-columns:1fr}
+    .product-image{height:260px}
+    .section-heading h2{font-size:22px}
+    .offer-banner{flex-direction:column;align-items:flex-start;padding:28px}
+    .ai-section{padding:22px 15px}
+    .ai-intro h2{font-size:23px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <i class="fa-solid fa-sparkles"></i>
+    اكتشفوا تجربة تسوق طبية أكثر ذكاءً مع DIANA MEDICAL
+</div>
+
+<nav class="navbar">
+    <a href="#" class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div>
+            <h2>DIANA MEDICAL</h2>
+            <small>HEALTHCARE COLLECTION</small>
+        </div>
+    </a>
+
+    <div class="nav-links">
+        <a href="#">الرئيسية</a>
+        <a href="#products">المنتجات</a>
+        <a href="#offers">العروض</a>
+        <a href="#negotiation">المفاوضة الذكية</a>
+    </div>
+
+    <div class="nav-actions">
+        <button class="cart-button" onclick="openCart()">
+            <i class="fa-solid fa-bag-shopping"></i>
+            السلة <span id="cartCount">0</span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO WITH COMPANY IMAGE -->
+
+<header class="hero">
+
+    <div class="hero-content">
+        <div class="hero-label">
+            <i class="fa-solid fa-star"></i>
+            DIANA MEDICAL EXPERIENCE
+        </div>
+
+        <h1>
+            صحتك تستحق<br>
+            <span>عناية استثنائية</span>
+        </h1>
+
+        <p>
+            اكتشف مجموعة منتجات DIANA MEDICAL الطبية،
+            تسوق منتجاتك المفضلة واستمتع بعروض حصرية
+            وتجربة تفاوض ذكية على مشترياتك.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#products" class="primary-btn">
+                تسوق الآن <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a href="#negotiation" class="secondary-btn">تفاوض مع AI ✦</a>
+        </div>
+    </div>
+
+    <!-- صورة الشركة: ضعي company.jpg داخل static -->
+
+    <div class="hero-media">
+        <img
+            src="static/WhatsApp Image 2026-09-01 at 10.17.00 AM.jpeg"
+            alt="DIANA MEDICAL"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+        >
+        <div class="hero-image-placeholder" style="display:none">
+            <i class="fa-solid fa-hospital"></i>
+            <span>صورة شركة DIANA MEDICAL</span>
+        </div>
+    </div>
+
+</header>
+
+<!-- FEATURES -->
+
+<section class="features">
+    <div class="feature">
+        <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
+        <div><h4>منتجات طبية</h4><p>مجموعة مختارة بعناية</p></div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon"><i class="fa-solid fa-tags"></i></div>
+        <div><h4>عروض مميزة</h4><p>أسعار وخصومات حصرية</p></div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon"><i class="fa-solid fa-robot"></i></div>
+        <div><h4>تفاوض ذكي</h4><p>تحدث مع مساعد المتجر</p></div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+        <div><h4>تسوق بسهولة</h4><p>سلة مشتريات منظمة</p></div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="section" id="products">
+
+    <div class="section-heading">
+        <div>
+            <small>OUR COLLECTION</small>
+            <h2>اكتشف منتجاتنا</h2>
+            <p>منتجات DIANA MEDICAL بين يديك</p>
+        </div>
+        <div class="product-count">{{ products|length }} منتجات</div>
+    </div>
+
+    <div class="products-grid">
+
+    {% for id, product in products.items() %}
+
+    <article class="product-card">
+
+        <div class="product-image">
+
+            <!-- صورة مستقلة لكل منتج -->
+
+            <div class="image-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>أضيفي صورة المنتج</span>
+            </div>
+
+            <img
+                src="{{ url_for('static', filename=product.image) }}"
+                alt="{{ product.name }}"
+                loading="lazy"
+                onload="this.previousElementSibling.style.display='none'"
+                onerror="this.style.display='none'"
+            >
+
+            <div class="sale-badge">
+                وفر {{ ((product.old-product.price)/product.old*100)|round|int }}%
+            </div>
+
+        </div>
+
+        <div class="product-info">
+
+            <span class="product-category">DIANA MEDICAL</span>
+
+            <h3>{{ product.name }}</h3>
+
+            <p class="product-description">
+                {{
+                'منتج طبي للاستخدام مع أجهزة قياس السكر.'
+                if id in ['strips50','strips100','device']
+                else 'اختيار عملي ضمن مجموعة منتجاتنا الطبية.'
+                }}
+            </p>
+
+            <div class="price-row">
+                <span class="current-price">
+                    {{ product.price }}
+                    <span class="currency">ر.س</span>
+                </span>
+                <span class="old-price">{{ product.old }} ر.س</span>
+            </div>
+
+            <button class="add-button" onclick="addToCart('{{ id }}')">
+                <i class="fa-solid fa-plus"></i>
+                أضف إلى السلة
+            </button>
+
+        </div>
+    </article>
+
+    {% endfor %}
+
+    </div>
+</section>
+
+<!-- OFFERS -->
+
+<section class="offer-banner" id="offers">
+    <div>
+        <h2>تسوق أكثر... ووفر أكثر 💜</h2>
+        <p>أضف أكثر من منتج إلى سلتك واكتشف عروض المجموعات.</p>
+    </div>
+    <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+        اكتشف العروض
+    </button>
+</section>
+
+<!-- AI NEGOTIATION -->
+
+<section class="ai-section" id="negotiation">
+
+    <div class="ai-intro">
+        <div class="ai-logo"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+
+        <small style="color:#8057cb;font-weight:900;font-size:11px">
+            SMART NEGOTIATION SYSTEM
+        </small>
+
+        <h2>
+            السعر قابل للنقاش؟<br>
+            <span>خلنا نتفاوض!</span>
+        </h2>
+
+        <p>
+            مو بس متجر عادي! أضف منتجاتك للسلة،
+            وابدأ محادثة مع مساعد DIANA الذكي.
+            اطلب خصماً، اقترح سعراً، وشوف وش ممكن نوصل له!
+        </p>
+
+        <div class="ai-tags">
+            <span>AI Assistant</span>
+            <span>Smart Offers</span>
+            <span>Pollinations AI</span>
+        </div>
+    </div>
+
+    <div class="chat-box">
+        <div class="chat-header">
+            <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+            <div>
+                <h4>DIANA AI Negotiator</h4>
+                <small>● مساعد المفاوضة</small>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="messages">
+            <div class="message bot">
+                يا هلا فيك في DIANA MEDICAL 💜
+
+                أنا مساعد المفاوضة الذكي.
+                أضف منتجاتك للسلة، وخلنا نشوف أفضل عرض ممكن نقدمه لك!
+
+                وش حاب تشتري اليوم؟
+            </div>
+        </div>
+
+        <div class="typing" id="typing" style="display:none">
+            المساعد يفكر في أفضل عرض لك...
+        </div>
+
+        <div class="chat-input-area">
+            <input id="chatInput"
+                placeholder="مثلاً: أبي خصم على مشترياتي..."
+                onkeydown="if(event.key==='Enter')sendMessage()">
+
+            <button onclick="sendMessage()" id="sendBtn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>DIANA MEDICAL</h3>
+            <p>تجربة تسوق طبية تجمع بين الجودة<br>والابتكار والذكاء الاصطناعي.</p>
+        </div>
+
+        <div>
+            <h3>روابط المتجر</h3>
+            <p><a href="#products">المنتجات</a></p>
+            <p><a href="#offers">العروض</a></p>
+            <p><a href="#negotiation">المفاوضة الذكية</a></p>
+        </div>
+
+        <div>
+            <h3>تجربة DIANA</h3>
+            <p>تسوق بذكاء</p>
+            <p>اكتشف العروض</p>
+            <p>تفاوض على مشترياتك</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 DIANA MEDICAL. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+
+<!-- CART -->
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+
+    <div class="drawer-header">
+        <h3><i class="fa-solid fa-bag-shopping"></i> سلة مشترياتك</h3>
+        <button onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-summary">
+        <div class="summary-row">
+            <span>المجموع قبل الخصم</span>
+            <strong id="subtotal">0 ر.س</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>خصم المجموعة</span>
+            <strong id="discount">0%</strong>
+        </div>
+
+        <div class="summary-row total">
+            <span>الإجمالي</span>
+            <span id="total">0 ر.س</span>
+        </div>
+
+        <button class="checkout-btn" onclick="checkout()">
+            تأكيد الطلب التجريبي
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <p style="font-size:10px;color:#999;text-align:center;margin-top:10px">
+            هذا نموذج تجريبي ولا تتم معالجة أي مدفوعات فعلية.
+        </p>
+    </div>
+
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+// PRODUCTS DATA FROM PYTHON
+
+const PRODUCTS = {{ products|tojson }};
+
+let cart = {};
+let history = [];
+
+function money(value) {
+    return Number(value).toFixed(2) + " ر.س";
+}
+
+// CART
+
+function addToCart(id) {
+    cart[id] = (cart[id] || 0) + 1;
+    renderCart();
+    showToast("تمت إضافة المنتج إلى سلتك 💜");
+}
+
+function changeQuantity(id, amount) {
+    cart[id] = (cart[id] || 0) + amount;
+
+    if (cart[id] <= 0) delete cart[id];
+
+    renderCart();
+}
+
+function removeItem(id) {
+    delete cart[id];
+    renderCart();
+}
+
+function getCartData() {
+    return Object.entries(cart).map(([id, quantity]) => ({
+        id,
+        quantity,
+        name: PRODUCTS[id].name,
+        price: PRODUCTS[id].price,
+        total: PRODUCTS[id].price * quantity
+    }));
+}
+
+function getSubtotal() {
+    return getCartData().reduce((sum, item) => sum + item.total, 0);
+}
+
+function getDiscount() {
+    const items = getCartData();
+    const quantity = items.reduce((sum, item) => sum + item.quantity, 0);
+
+    if (items.length >= 2) return 15;
+    if (quantity >= 3) return 10;
+
+    return 0;
+}
+
+function getTotal() {
+    return getSubtotal() * (1 - getDiscount()/100);
+}
+
+function renderCart() {
+    const items = getCartData();
+
+    document.getElementById("cartCount").textContent =
+        items.reduce((sum, item) => sum + item.quantity, 0);
+
+    const container = document.getElementById("cartItems");
+
+    if (!items.length) {
+        container.innerHTML = `
+            <div class="empty-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+                سلتك فارغة حالياً
+                <p>اكتشف منتجاتنا وأضف ما يناسبك</p>
+            </div>
+        `;
+    } else {
+        container.innerHTML = items.map(item => `
+            <div class="cart-item">
+                <img
+                    src="/static/${encodeURIComponent(PRODUCTS[item.id].image)}"
+                    alt="${item.name}"
+                    onerror="this.style.opacity='.2'"
+                >
+
+                <div style="flex:1">
+                    <h4>${item.name}</h4>
+                    <p>${money(item.total)}</p>
+
+                    <div class="quantity-controls">
+                        <button onclick="changeQuantity('${item.id}',1)">+</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="changeQuantity('${item.id}',-1)">−</button>
+                    </div>
+                </div>
+
+                <button class="remove-btn" onclick="removeItem('${item.id}')">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+        `).join("");
+    }
+
+    document.getElementById("subtotal").textContent = money(getSubtotal());
+    document.getElementById("discount").textContent = getDiscount() + "%";
+    document.getElementById("total").textContent = money(getTotal());
+}
+
+function openCart() {
+    document.getElementById("cartDrawer").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+}
+
+function closeCart() {
+    document.getElementById("cartDrawer").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+}
+
+// AI CHAT
+
+function addMessage(text, type) {
+    const container = document.getElementById("messages");
+    const div = document.createElement("div");
+
+    div.className = "message " + type;
+    div.textContent = text;
+
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+}
+
+async function sendMessage() {
+
+    const input = document.getElementById("chatInput");
+    const button = document.getElementById("sendBtn");
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    if (!Object.keys(cart).length) {
+        addMessage("أضيفي منتج واحد على الأقل للسلة قبل التفاوض 💜", "bot");
+        return;
+    }
+
+    input.value = "";
+    addMessage(message, "user");
+
+    history.push({role:"user",content:message});
+
+    document.getElementById("typing").style.display = "block";
+    button.disabled = true;
+
+    try {
+
+        const response = await fetch("/api/negotiate", {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                message:message,
+                cart:cart,
+                history:history
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "حدث خطأ في الاتصال");
+        }
+
+        addMessage(data.reply, "bot");
+
+        history.push({role:"assistant",content:data.reply});
+
+        if (history.length > 12) history = history.slice(-12);
+
+        if (data.ai === false) showToast("تم استخدام نظام العروض البديل");
+
+    } catch(error) {
+
+        addMessage(
+            "عذراً، واجهنا مشكلة في الاتصال. جربي مرة ثانية 💜",
+            "bot"
+        );
+
+        console.error(error);
+
+    } finally {
+        document.getElementById("typing").style.display = "none";
+        button.disabled = false;
+    }
+}
+
+// CHECKOUT
+
+async function checkout() {
+
+    if (!Object.keys(cart).length) {
+        showToast("أضيفي منتجات للسلة أولاً");
+        return;
+    }
+
+    try {
+        const response = await fetch("/api/checkout", {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({cart:cart})
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) throw new Error(data.error);
+
+        const order = data.order;
+
+        alert(
+            "ملخص طلبك من DIANA MEDICAL 💜\n\n" +
+            order.items.map(item => item.name + " × " + item.quantity).join("\n") +
+            "\n\nالمجموع: " + money(order.subtotal) +
+            "\nالخصم: " + order.discount + "%" +
+            "\nالإجمالي: " + money(order.total) +
+            "\n\nهذا طلب تجريبي ولم يتم تنفيذ عملية شراء."
+        );
+
+    } catch(error) {
+        showToast("تعذر تجهيز الطلب");
+    }
+}
+
+// TOAST
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => toast.classList.remove("show"), 2500);
+}
+
+renderCart();
+
+</script>
+
+</body>
+</html>
